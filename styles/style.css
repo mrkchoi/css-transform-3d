@@ -1,20 +1,23 @@
+/* Global Styles */
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Scene styles (shared) */
 .scene {
-    /* margin: 1000px 0; */
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     perspective: 2000px;
-
+    flex-direction: column;
 }
 
+
+/* Card flip styles */
 .card {
     width: 50%;
     height: 50%;
@@ -23,9 +26,6 @@ body {
     transition: transform 1s;
     transform-style: preserve-3d;
     transform-origin: right center;
-
-
-    
 }
 
 .card__face {
@@ -36,7 +36,6 @@ body {
     align-items: center;
     position: absolute;
     backface-visibility: hidden;
-
 }
 
 .card__face--front {
@@ -56,4 +55,85 @@ body {
 
 .card:active {
     transform: translateX(-100%) rotateY(180deg);
+}
+
+.snippet {
+    margin: 20px;
+    font-weight: 700;
+}
+
+/* Cube styles */
+.cube {
+    width: 30rem;
+    height: 30rem;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-20rem);
+    transition: transform 1s;
+}
+
+.cube__face {
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 800;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .8;
+    border: 5px solid #e0e0e0;
+    /* box-shadow: 0 5px 20px rgba(0,0,0,.2); */
+}
+
+.cube__face--front {
+    background-color: #EDA2C0;
+    transform: rotateY(0) translateZ(15rem);
+}
+.cube__face--back {
+    background-color: #FF715B;
+    transform: rotateY(180deg) translateZ(15rem);
+}
+.cube__face--right {
+    background-color: #FFFFFF;
+    transform: rotateY(90deg) translateZ(15rem);
+    color: #000;
+}
+.cube__face--left {
+    background-color: #1EA896;
+    transform: rotateY(-90deg) translateZ(15rem);
+}
+.cube__face--top {
+    background-color: #FFE74C;
+    transform: rotateX(90deg) translateZ(15rem);
+}
+.cube__face--bottom {
+    background-color: #35A7FF;
+    transform: rotateX(-90deg) translateZ(15rem);
+}
+
+
+.cube.show-front {
+    transform: translateZ(-15rem) rotateY(0deg);
+}
+.cube.show-back {
+    transform: translateZ(-15rem) rotateY(-180deg);
+}
+.cube.show-right {
+    transform: translateZ(-15rem) rotateY(-90deg);
+}
+.cube.show-left {
+    transform: translateZ(-15rem) rotateY(90deg);
+}
+.cube.show-top {
+    transform: translateZ(-15rem) rotateX(-90deg);
+}
+.cube.show-bottom {
+    transform: translateZ(-15rem) rotateX(90deg);
+}
+
+.target {
+    margin: 4rem 0;
 }
