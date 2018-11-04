@@ -1,4 +1,6 @@
+/**************** 
 // Cube
+****************/
 
 // DOM Elements
 let buttons = document.querySelectorAll('.cube-btn');
@@ -29,18 +31,14 @@ function changeCube(e) {
 }
 
 
-
+/**************** 
 // Box
+****************/
+
 
 // DOM Elements
 let boxBtns = document.querySelectorAll('.box-btn');
 let box = document.querySelector('.box');
-let showFront = document.querySelector('.box-btn.show-front');
-let showBack = document.querySelector('.box-btn.show-back');
-let showRight = document.querySelector('.box-btn.show-right');
-let showLeft = document.querySelector('.box-btn.show-left');
-let showTop = document.querySelector('.box-btn.show-top');
-let showBottom = document.querySelector('.box-btn.show-bottom');
 
 // Event Listeners
 boxBtns.forEach(button => {
@@ -68,13 +66,12 @@ function changeBox(e) {
 
 
 
-
+/**************** 
 // Carousel
+****************/
 
 // Define DOM variables
 let carouselBtns = document.querySelectorAll('.carousel__btns');
-let carouselBackBtn = document.querySelector('.carousel__btn--back');
-let carouselNextBtn = document.querySelector('.carousel__btn--next');
 let carousel = document.querySelector('.carousel');
 
 // Event listener for carousel controls
