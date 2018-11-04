@@ -65,3 +65,35 @@ function changeBox(e) {
         box.classList.toggle('show-bottom');
     }
 }
+
+
+
+
+// Carousel
+
+// Define DOM variables
+let carouselBtns = document.querySelectorAll('.carousel__btns');
+let carouselBackBtn = document.querySelector('.carousel__btn--back');
+let carouselNextBtn = document.querySelector('.carousel__btn--next');
+let carousel = document.querySelector('.carousel');
+
+// Event listener for carousel controls
+carouselBtns.forEach(button => {
+    button.addEventListener('click', rotateCarousel);
+});
+let degree = 0;
+
+// Function to interact with carousel
+function rotateCarousel(e) {
+    
+    if(e.target.classList.contains('carousel__btn--back')) {
+        degree += 40;
+        carousel.style.transform = `translateZ(-41.21rem) rotateY(${degree}deg)`;
+    } else if(e.target.classList.contains('carousel__btn--forward')) {
+        degree -= 40;
+        carousel.style.transform = `translateZ(-41.21rem) rotateY(${degree}deg)`;
+    } else {
+        degree = 0;
+        carousel.style.transform = `translateZ(-41.21rem) rotateY(${degree}deg)`;
+    }
+}
